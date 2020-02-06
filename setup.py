@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="ocr-tesseract-wrapper",
-    version="0.0.2",
+    version="0.0.3",
     author="Petar Jalusic",
     author_email="apjalusic@gmail.com",
     description="Tiny wrapper around pytesseract with image preprocessing and OCR configurations",
