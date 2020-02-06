@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/pjalusic/ocr-tesseract-wrapper",
     packages=setuptools.find_packages(),
-    package_dir={"ocr-tesseract-wrapper": "ocr_tesseract_wrapper"}
+    package_dir={"ocr-tesseract-wrapper": "ocr_tesseract_wrapper"},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
