@@ -2,7 +2,7 @@ import threading
 
 from pytesseract import pytesseract
 
-from ocr_thingy.ocr_tesseract_wrapper.transformations import auto_threshold
+from .transformations import auto_threshold
 
 
 class OCR:
@@ -102,7 +102,9 @@ class OCR:
         Returns:
             list of OCR results in the same order as given input
         """
-        images = images or []
+        if images is None or not isinstance(images, list):
+            print('Usage: ocr([img1, img2])')
+            pass
         additional_configs = additional_configs or []
 
         images = self._preprocess_images(images)
