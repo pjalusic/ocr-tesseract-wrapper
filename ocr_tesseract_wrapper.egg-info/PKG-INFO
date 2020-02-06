@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: ocr-tesseract-wrapper
+Version: 0.0.1
+Summary: Tiny wrapper around pytesseract with image preprocessing and OCR configurations
+Home-page: https://github.com/pjalusic/ocr-tesseract-wrapper
+Author: Petar Jalusic
+Author-email: apjalusic@gmail.com
+License: UNKNOWN
+Description: # ocr-tesseract-wrapper
+        Tiny wrapper around pytesseract with image preprocessing and OCR configurations
+        
+        ## Requirements
+        - tesseract installed (https://github.com/tesseract-ocr/tesseract/wiki#installation)
+        - python packages:
+          - opencv-python
+          - tesseract
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

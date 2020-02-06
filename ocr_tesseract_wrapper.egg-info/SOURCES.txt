@@ -1,0 +1,8 @@
+README.md
+setup.py
+ocr_tesseract_wrapper/__init__.py
+ocr_tesseract_wrapper.egg-info/PKG-INFO
+ocr_tesseract_wrapper.egg-info/SOURCES.txt
+ocr_tesseract_wrapper.egg-info/dependency_links.txt
+ocr_tesseract_wrapper.egg-info/requires.txt
+ocr_tesseract_wrapper.egg-info/top_level.txt
