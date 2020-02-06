@@ -29,14 +29,16 @@ class OCR:
      12    Sparse text with OSD.
      13    Raw line. Treat the image as a single text line, bypassing hacks that are Tesseract-specific.
     """
+    OEM_DEFAULT = 3
     PSM_DEFAULT = 6
 
-    def __init__(self, ocr_psm=PSM_DEFAULT):
+    def __init__(self, oem=OEM_DEFAULT, psm=PSM_DEFAULT):
         """
         Args:
-            ocr_psm: psm parameter (Modes 6 and 7 work well, and for large blocks of text try 3, the default mode)
+            oem: oem parameter (look at the beginning of the file)
+            psm: psm parameter (Modes 6 and 7 work well, and for large blocks of text try 3, the default mode)
         """
-        self.config = "--oem 3 --psm %d" % ocr_psm
+        self.config = "--oem %s --psm %d" % (oem, psm)
         self.results = {}
         self.lock = threading.RLock()
 
