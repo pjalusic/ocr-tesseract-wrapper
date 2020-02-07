@@ -1,2 +1,2 @@
 pytesseract
-opencv-python
+Pillow

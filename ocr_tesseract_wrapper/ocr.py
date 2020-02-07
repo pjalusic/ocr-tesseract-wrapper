@@ -1,8 +1,7 @@
 import threading
 
 from pytesseract import pytesseract
-
-from .transformations import auto_threshold
+from PIL import Image
 
 
 class OCR:
@@ -44,7 +43,12 @@ class OCR:
 
     @staticmethod
     def _transform_image(image):
-        return auto_threshold(image)
+        """
+        override this method to apply image transformations in order to increase OCR accuracy.
+        good starting point is cv2.threshold(image, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1] but be sure to
+            transform PIL images to numpy array first (np.array(image))
+        """
+        return image
 
     def _preprocess_images(self, images):
         return [self._transform_image(x) for x in images]
@@ -97,16 +101,19 @@ class OCR:
     def ocr(self, images=None, additional_configs=None):
         """
         Args:
-            images: list of RGB images to run OCR on.
+            images: list of numpy array RGB images or string image paths to run OCR on.
             additional_configs: list of configs and restrictions for each of the images given to the OCR.
                 for instance: [None, 'tessedit_char_whitelist=0123456789'] will apply no restriction to the first but
                 will only return numeric characters from the second image.
         Returns:
             list of OCR results in the same order as given input
         """
-        if images is None or not isinstance(images, list):
+        if not isinstance(images, list) or len(images) == 0:
             print('Usage: ocr([img1, img2])')
             pass
+        if isinstance(images[0], str):
+            images = [Image.open(x) for x in images]
+
         additional_configs = additional_configs or []
 
         images = self._preprocess_images(images)
