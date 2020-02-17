@@ -37,7 +37,7 @@ class OCR:
             oem: oem parameter (look at the beginning of the file)
             psm: psm parameter (Modes 6 and 7 work well, and for large blocks of text try 3, the default mode)
         """
-        self.config = "--oem %s --psm %d" % (oem, psm)
+        self.config = "--oem %s --psm %d -c tessedit_do_invert=0" % (oem, psm)
         self.results = {}
         self.lock = threading.RLock()
 
