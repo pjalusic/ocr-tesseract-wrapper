@@ -74,7 +74,7 @@ class OCR:
 
     def _work(self, roi, idx, extra_config):
         text = pytesseract.image_to_string(roi, config=extra_config)
-        text = "".join([c if ord(c) < 128 else "" for c in text]).strip()
+        text = text.strip()
         self._save_result(idx, text)
 
     def _order_results(self):

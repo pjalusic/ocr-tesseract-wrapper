@@ -2,6 +2,7 @@ README.md
 setup.py
 ocr_tesseract_wrapper/__init__.py
 ocr_tesseract_wrapper/ocr.py
+ocr_tesseract_wrapper/text_detectors.py
 ocr_tesseract_wrapper.egg-info/PKG-INFO
 ocr_tesseract_wrapper.egg-info/SOURCES.txt
 ocr_tesseract_wrapper.egg-info/dependency_links.txt

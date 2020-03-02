@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: ocr-tesseract-wrapper
-Version: 0.0.6
+Version: 0.0.7
 Summary: Tiny wrapper around pytesseract with image preprocessing and OCR configurations
 Home-page: https://github.com/pjalusic/ocr-tesseract-wrapper
 Author: Petar Jalusic
