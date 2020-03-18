@@ -29,15 +29,16 @@ class OCR:
      13    Raw line. Treat the image as a single text line, bypassing hacks that are Tesseract-specific.
     """
     OEM_DEFAULT = 3
-    PSM_DEFAULT = 6
+    PSM_DEFAULT = 3
+    LANG_DEFAULT = 'eng'
 
-    def __init__(self, oem=OEM_DEFAULT, psm=PSM_DEFAULT):
+    def __init__(self, lang=LANG_DEFAULT, oem=OEM_DEFAULT, psm=PSM_DEFAULT):
         """
         Args:
             oem: oem parameter (look at the beginning of the file)
             psm: psm parameter (Modes 6 and 7 work well, and for large blocks of text try 3, the default mode)
         """
-        self.config = "--oem %s --psm %d -c tessedit_do_invert=0" % (oem, psm)
+        self.config = "-l %s --oem %s --psm %d -c tessedit_do_invert=0" % (lang, oem, psm)
         self.results = {}
         self.lock = threading.RLock()
 
